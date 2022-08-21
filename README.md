@@ -1,8 +1,8 @@
 # Tam High FIRST Tech Challenge Robotics Club
 
 Welcome! This is the repository for the Tamalpais Union High School District
-FIRST Tech Challenge Robotics Club! Whew, that's a mouthfull.
-The Tam High FTC Robotics Club for short.
+FIRST Tech Challenge Robotics Club! Whew, that's a mouthful,
+the Tam High FTC Robotics Club for short.
 
 If you're not a member of the club, feel free to poke around,
 but this is mainly for internal use!
