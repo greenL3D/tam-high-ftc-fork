@@ -16,6 +16,9 @@ especially with Java,
 you could also move directly to the [OnBot Java](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/OnBot-Java-Tutorial)
 or [Android Studio](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Android-Studio-Tutorial) tutorials.
 
+**NB**: At present, we are not using Android Studio for team development,
+but if you want to set it for your own system feel free to ask Nick for assistance!
+
 ## Resources
 
 - [FTC Robot Controller Repo](https://github.com/FIRST-Tech-Challenge/FtcRobotController) - Note that this is not yet updated for the 2022-2023 season.
