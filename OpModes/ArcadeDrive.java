@@ -5,11 +5,11 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-@TeleOp(name="Template: Arcade Drive", group="Linear Opmode")
+@TeleOp(name = "Template: Arcade Drive", group = "Linear Opmode")
 public class ArcadeDrive extends LinearOpMode {
     // Declare the hardware variables
-    private DcMotor left_front, right_front;
-    private DcMotor left_back, right_back;
+    private DcMotor leftFront, rightFront;
+    private DcMotor leftBack, rightBack;
 
     @Override
     public void runOpMode() {

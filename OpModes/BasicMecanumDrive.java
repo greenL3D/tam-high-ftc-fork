@@ -8,11 +8,11 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 // We will need some operators from this library
 import Math;
 
-@TeleOp(name="Template: Basic Mecanum Drive", group="Linear Opmode")
+@TeleOp(name = "Template: Basic Mecanum Drive", group = "Linear Opmode")
 public class BasicMecanumDrive extends LinearOpMode {
     // Declare the hardware variables
-    private DcMotor left_front, right_front;
-    private DcMotor left_back, right_back;
+    private DcMotor leftFront, rightFront;
+    private DcMotor leftBack, rightBack;
 
     @Override
     public void runOpMode() {
@@ -39,31 +39,33 @@ public class BasicMecanumDrive extends LinearOpMode {
             // Get the gamepad inputs
             // The y axis is vertical and "backwards",
             // so we negate it to make it positive when going forward
-            //     ^ +y
-            //     |
-            // <-     ->
-            // -x  |  +x
-            //     v -y
+            // ^ +y
+            // |
+            // <- ->
+            // -x | +x
+            // v -y
             float deltaY = -gamepad1.left_stick_y;
             float deltaX = gamepad1.left_stick_x;
             // Rotate by moving right stick left-right
             float rotation = gamepad1.right_stick_x;
 
-            // First, we need to split the translation vector into a direction and a magnitude.
+            // First, we need to split the translation vector into a direction and a
+            // magnitude.
             // The direction is the direction to move
             float direction = Math.atan2(deltaY, deltaX);
             // The magnitude is how fast to move
             float magnitude = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
 
             // TODO Explain these calculations
-            float leftFrontPower = magnitude * Math.sin(direction + Math.pi/4) + rotation;
-            float leftBackPower = magnitude * Math.sin(direction - Math.pi/4) + rotation;
-            float rightFrontPower = magnitude * Math.sin(direction - Math.pi/4) - rotation;
-            float rightBackPower = magnitude * Math.sin(direction + Math.pi/4) - rotation;
+            float leftFrontPower = magnitude * Math.sin(direction + Math.pi / 4) + rotation;
+            float leftBackPower = magnitude * Math.sin(direction - Math.pi / 4) + rotation;
+            float rightFrontPower = magnitude * Math.sin(direction - Math.pi / 4) - rotation;
+            float rightBackPower = magnitude * Math.sin(direction + Math.pi / 4) - rotation;
 
             // All of the values must be scaled to be within [-1,1]
             // First, find the highest value
-            float maxPower = Math.max(leftFrontPower, Math.max(rightBackPower, Math.max(leftBackPower, rightBackPower)));
+            float maxPower = Math.max(leftFrontPower,
+                    Math.max(rightBackPower, Math.max(leftBackPower, rightBackPower)));
             // Then divide all the powers by that value.
             leftFrontPower = leftFrontPower / maxPower;
             leftBackPower = leftBackPower / maxPower;
